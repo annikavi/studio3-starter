@@ -12,7 +12,12 @@
       <h1>{{ count(get(tasks, "done")) }} done of {{ tasks.length }} total</h1>
       <ul>
         <li v-for="(task, i) in tasks">
-          <input type="checkbox" v-model="task.done" aria-label="Done?" />
+          <input
+            type="checkbox"
+            v-model="task.done"
+            aria-label="Done?"
+            v-focus
+          />
           <input type="text" aria-label="Task" v-model="task.title" />
           <button @click="deleteItem(i)">x</button>
         </li>
